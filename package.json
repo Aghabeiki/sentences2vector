@@ -10,7 +10,7 @@
   "scripts": {
     "build": "tsc",
     "test": "node ./example/example.js",
-    "doc": "./node_modules/.bin/typedoc --out doc/ src/Sentences2vector.ts"
+    "doc": "./node_modules/.bin/typedoc --out docs/ src/Sentences2vector.ts"
   },
   "keywords": [
     "NLP",
