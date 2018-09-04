@@ -66,10 +66,13 @@
 			<div class="tsd-panel tsd-typography">
 				<h1 id="sentences2vector">sentences2vector</h1>
 				<p>Get Similarity of two sentences based gensim word2vec trained model.</p>
-				<p>A working Example exist on example directory.</p>
-				<p>the simple steps :
-					Train your Word2Vec model in Python Gensim.
-				Then store it as a plain text Google Word2Vec format.</p>
+				<ul>
+					<li>A working Example exist on example directory.</li>
+					<li>Docs available <a href="https://aghabeiki.github.io/sentences2vector/">here</a></li>
+				</ul>
+				<p>For saving your model from Gensim to our Module use this steps:</p>
+				<p>1- Train your Word2Vec model in Python Gensim.</p>
+				<p>2- Then store it as a plain text Google Word2Vec format.</p>
 				<pre><code class="language-python">model.wv.save_word2vec_format(<span class="hljs-string">'./data/text.model'</span>, binary = <span class="hljs-keyword">False</span>)
 model.intersect_word2vec_format(<span class="hljs-string">'./data/text.model'</span>, lockf=<span class="hljs-number">0.0</span>, binary=<span class="hljs-keyword">False</span>, encoding=<span class="hljs-string">'utf8'</span>, unicode_errors=<span class="hljs-string">'strict'</span>)</code></pre>
 				<p>Aether: Amin Aghabeiki.</p>
