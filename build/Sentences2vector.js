@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const math = require("mathjs");
 const natural = require("natural");
+const sw = require("stopword");
 const Word2Vec_1 = require("./Word2Vec");
 class Sentences2vector {
     constructor(model_file, sentencesFilter = sentence => sentence) {
@@ -19,8 +20,8 @@ class Sentences2vector {
     }
     get_vector(sentence) {
         const filteredSentence = this.preFilter(sentence);
-        const sentencesVectors = this.tokenizer
-            .tokenize(filteredSentence).map(token => this.model.getVector(token));
+        const sentencesVectors = sw.removeStopwords(this.tokenizer
+            .tokenize(filteredSentence)).map(token => this.model.getVector(token));
         if (sentencesVectors && Array.isArray(sentencesVectors) && sentencesVectors.length)
             return this.zip(...sentencesVectors).map(item => item.reduce((p, v) => {
                 p += v;

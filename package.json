@@ -1,6 +1,6 @@
 {
   "name": "sentences2vector",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "directories": {
@@ -25,7 +25,8 @@
   "license": "MIT",
   "dependencies": {
     "mathjs": "^5.1.1",
-    "natural": "^0.6.1"
+    "natural": "^0.6.1",
+    "stopword": "^0.1.10"
   },
   "devDependencies": {
     "@types/mathjs": "^4.4.1",

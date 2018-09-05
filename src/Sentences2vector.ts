@@ -1,5 +1,6 @@
 import * as math from 'mathjs';
 import * as natural from 'natural';
+import * as sw from 'stopword';
 import {Word2Vec} from './Word2Vec';
 
 
@@ -27,8 +28,8 @@ export class Sentences2vector {
 
     public get_vector(sentence: string): Array<Array<any>> {
         const filteredSentence: string = this.preFilter(sentence);
-        const sentencesVectors: Array<Array<number>> = this.tokenizer
-            .tokenize(filteredSentence).map(token => this.model.getVector(token));
+        const sentencesVectors: Array<Array<number>> = sw.removeStopwords(this.tokenizer
+            .tokenize(filteredSentence)).map(token => this.model.getVector(token));
         if (sentencesVectors && Array.isArray(sentencesVectors) && sentencesVectors.length)
             return this.zip(...sentencesVectors).map(item => item.reduce((p, v) => {
                 p += v;
