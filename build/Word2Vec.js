@@ -2,9 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = require("fs");
 class Word2Vec {
-    constructor(modelPath) {
+    constructor(modelPath, isProd = false) {
         this._vector = {};
         this.load(modelPath);
+        this.isProd = isProd;
     }
     load(modelPath) {
         let acc = true;

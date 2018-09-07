@@ -3,6 +3,7 @@ export declare class Sentences2vector {
     private tokenizer;
     private readonly preFilter;
     private readonly vectorSize;
+    private readonly isProd;
     constructor(model_file: string, sentencesFilter?: Function);
     private zip;
     private load;

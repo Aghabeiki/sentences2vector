@@ -4,10 +4,12 @@ export class Word2Vec {
     private modelSize: number;
     private _vSize: number;
     private readonly _vector: Object;
+    private readonly isProd: boolean;
 
-    constructor(modelPath: string) {
+    constructor(modelPath: string,isProd:boolean=false) {
         this._vector = {};
         this.load(modelPath)
+        this.isProd=isProd;
     }
 
     private load(modelPath: string) {
